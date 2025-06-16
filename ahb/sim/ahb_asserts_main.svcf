@@ -1,0 +1,427 @@
+# SimVision Command Script (Tue Nov 08 09:15:56 AM BDT 2022)
+#
+# Version 15.20.s044
+#
+# You can restore this configuration with:
+#
+#     simvision -input ahb_asserts_main.svcf
+#  or simvision -input ahb_asserts_main.svcf database1 database2 ...
+#
+
+
+#
+# Preferences
+#
+preferences set txe-locate-add-fibers 1
+preferences set signal-type-colors {assertion #FF0000 output #FFA500 group #0099FF inout #00FFFF input #FFFF00 fiber #00EEEE errorsignal #FF0000 unknown #FFFFFF overlay #0099FF internal #00FF00 reference #FFFFFF}
+preferences set txe-navigate-search-locate 0
+preferences set txe-view-hold 0
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set verilog-colors {Su #ff0099 0 {} 1 {} HiZ #ff9900 We #00ffff Pu #9900ff Sm #00ff99 X #ff0000 StrX #ff0000 other #ffff00 Z #ff9900 Me #0000ff La #ff00ff St {}}
+preferences set toolbar-sendToIndago-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set txe-navigate-waveform-locate 1
+preferences set txe-view-hidden 0
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set txe-search-show-linenumbers 1
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set plugin-enable-groupscope 0
+preferences set key-bindings {PageUp PageUp Edit>Undo Ctrl+z View>Zoom>In Alt+i View>Zoom>Next {Alt+Right arrow} PageDown PageDown ScrollDown {Down arrow} Edit>Copy Ctrl+c Edit>Select>All Ctrl+a Simulation>NextInScope F7 View>Zoom>FullY_widget y Edit>Create>Group Ctrl+g Format>Radix>Decimal Ctrl+Shift+D Edit>Ungroup Ctrl+Shift+G TopOfPage Home Edit>Create>Condition Ctrl+e {command -console SimVision {%w sidebar access designbrowser selectall}} Alt+a ScrollLeft {Left arrow} Edit>SelectAllText Alt+a Edit>TextSearchConsole Alt+s View>Zoom>FullX_widget = Windows>SendTo>Waveform Ctrl+w Simulation>Return Shift+F5 View>CallstackDown {Ctrl+Down arrow} Select>All Ctrl+a Edit>Delete Del Format>Radix>Octal Ctrl+Shift+O Edit>Cut Ctrl+x Simulation>Run F2 Edit>Create>Marker Ctrl+m View>Center Alt+c View>CallstackInWindow Ctrl+k Edit>SelectAll Ctrl+a File>OpenDatabase Ctrl+o Edit>Redo Ctrl+y Format>Radix>Binary Ctrl+Shift+B View>ExpandSequenceTime>AtCursor Alt+x ScrollUp {Up arrow} File>CloseWindow Ctrl+Shift+w ScrollRight {Right arrow} Simulation>ReinvokeSimulator {} View>Zoom>FullX Alt+= Edit>Create>Bus Ctrl+b Explore>NextEdge Ctrl+\] View>Zoom>Cursor-Baseline Alt+z View>Zoom>OutX Alt+o Edit>GoToLine Ctrl+g View>Zoom>Fit Alt+= View>Zoom>OutX_widget o View>CallstackUp {Ctrl+Up arrow} View>Bookmarks>Add Ctrl+b Format>Radix>Hexadecimal Ctrl+Shift+H Edit>Search Ctrl+f Simulation>Next F6 View>ShowValues Ctrl+s View>Zoom>InX Alt+i Edit>Create>MarkerAtCursor Ctrl+Shift+M View>Zoom>Out Alt+o Edit>TextSearch Ctrl+f Format>Signed Ctrl+Shift+S Edit>Paste Ctrl+v View>Zoom>Previous {Alt+Left arrow} Control>ReinvokeSimulator Ctrl+Shift+R View>CollapseSequenceTime>AtCursor Alt+s Format>Radix>ASCII Ctrl+Shift+A View>Zoom>InX_widget i BottomOfPage End Explore>PreviousEdge {Ctrl+[} Simulation>Step F5}
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set txe-navigate-waveform-next-child 1
+preferences set vhdl-colors {X #ff0000 0 {} L #00ffff H #00ffff U #9900ff 1 {} - {} Z #ff9900 W #ff0000}
+preferences set txe-locate-scroll-x 1
+preferences set txe-locate-scroll-y 1
+preferences set txe-locate-pop-waveform 1
+preferences set whats-new-dont-show-at-startup 1
+preferences set key-bindings {Edit>Undo Ctrl+z PageUp PageUp View>Zoom>Next {Alt+Right arrow} View>Zoom>In Alt+i PageDown PageDown Edit>Copy Ctrl+c ScrollDown {Down arrow} Edit>Create>Group Ctrl+g View>Zoom>FullY_widget y Simulation>NextInScope F7 Edit>Select>All Ctrl+a Format>Radix>Decimal Ctrl+Shift+D Edit>Ungroup Ctrl+Shift+G TopOfPage Home Edit>Create>Condition Ctrl+e {command -console SimVision {%w sidebar access designbrowser selectall}} Alt+a ScrollLeft {Left arrow} Edit>SelectAllText Alt+a Edit>TextSearchConsole Alt+s View>Zoom>FullX_widget = Windows>SendTo>Waveform Ctrl+w Simulation>Return Shift+F5 View>CallstackDown {Ctrl+Down arrow} Select>All Ctrl+a Edit>Delete Del Format>Radix>Octal Ctrl+Shift+O Edit>Cut Ctrl+x Simulation>Run F2 Edit>Create>Marker Ctrl+m View>Center Alt+c View>CallstackInWindow Ctrl+k Edit>SelectAll Ctrl+a File>OpenDatabase Ctrl+o Edit>Redo Ctrl+y Format>Radix>Binary Ctrl+Shift+B View>ExpandSequenceTime>AtCursor Alt+x ScrollUp {Up arrow} File>CloseWindow Ctrl+Shift+w ScrollRight {Right arrow} Simulation>ReinvokeSimulator {} View>Zoom>FullX Alt+= Edit>Create>Bus Ctrl+b Explore>NextEdge Ctrl+\] View>Zoom>Cursor-Baseline Alt+z View>Zoom>OutX Alt+o Edit>GoToLine Ctrl+g View>Zoom>Fit Alt+= View>Zoom>OutX_widget o View>CallstackUp {Ctrl+Up arrow} View>Bookmarks>Add Ctrl+b View>ShowValues Ctrl+s Simulation>Next F6 Edit>Search Ctrl+f Format>Radix>Hexadecimal Ctrl+Shift+H Edit>Create>MarkerAtCursor Ctrl+Shift+M View>Zoom>InX Alt+i View>Zoom>Out Alt+o Edit>TextSearch Ctrl+f View>Zoom>Previous {Alt+Left arrow} Edit>Paste Ctrl+v Format>Signed Ctrl+Shift+S Control>ReinvokeSimulator Ctrl+Shift+R View>CollapseSequenceTime>AtCursor Alt+s View>Zoom>InX_widget i Format>Radix>ASCII Ctrl+Shift+A Simulation>Step F5 Explore>PreviousEdge {Ctrl+[} BottomOfPage End}
+
+#
+# PPE data
+#
+array set dbNames ""
+set dbNames(realName1) [database require waves -hints {
+	file ./waves.shm/waves.trn
+	file /home/Uc211217/Uc211217/digital_verification/amba_ahb/sim/waves.shm/waves.trn
+}]
+#
+# Groups
+#
+catch {group new -name {hsel_hwrite_chk contributors} -overlay 0}
+catch {group new -name {hresp_chk contributors} -overlay 0}
+catch {group new -name {hready_chk contributors} -overlay 0}
+catch {group new -name {stable_chk_hresp contributors} -overlay 0}
+catch {group new -name {stable_chk_hready contributors} -overlay 0}
+catch {group new -name {abc_chk contributors} -overlay 0}
+catch {group new -name {ab_forbid_chk contributors} -overlay 0}
+catch {group new -name {bc_overlapped_imp_chk contributors} -overlay 0}
+catch {group new -name {bc_overlapped_imp_chk contributors (1)} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk contributors} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk2 contributors} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk3 contributors} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk1 contributors} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk1 contributors (1)} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk1 contributors (2)} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk1 contributors (3)} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk1 contributors (4)} -overlay 0}
+catch {group new -name {cd_non_overlapped_imp_chk3 contributors} -overlay 0}
+catch {group new -name {cd_non_overlapped_imp_chk2 contributors} -overlay 0}
+catch {group new -name {cd_non_overlapped_imp_chk1 contributors} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk1 contributors (5)} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk2 contributors (1)} -overlay 0}
+catch {group new -name {cd_overlapped_imp_chk3 contributors (1)} -overlay 0}
+catch {group new -name {de_non_overlapped_imp_chk1 contributors} -overlay 0}
+catch {group new -name {de_non_overlapped_imp_chk3 contributors} -overlay 0}
+catch {group new -name {de_non_overlapped_imp_chk2 contributors} -overlay 0}
+catch {group new -name {de_non_overlapped_imp_chk1 contributors (1)} -overlay 0}
+catch {group new -name {abcd_imp_chk contributors} -overlay 0}
+catch {group new -name {nonseq_transfer_chk contributors} -overlay 0}
+catch {group new -name {hsel_hwrite_chk contributors (1)} -overlay 0}
+catch {group new -name {ahb_nonseq_transfer_chk contributors} -overlay 0}
+group using {hsel_hwrite_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.hsel_hwrite_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HWRITE}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HSEL}]} ]
+group using {hresp_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.hresp_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HRESP[1:0]}]} ]
+group using {hready_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.hready_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HREADY}]} ]
+group using {stable_chk_hresp contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.stable_chk_hresp contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HRESP[1:0]}]} ]
+group using {stable_chk_hready contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.stable_chk_hready contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HREADY}]} ]
+group using {abc_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.abc_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {ab_forbid_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.ab_forbid_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {bc_overlapped_imp_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.bc_overlapped_imp_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {bc_overlapped_imp_chk contributors (1)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.bc_overlapped_imp_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk2 contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk2 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ] \
+    {cd_overlapped_imp_chk1 contributors}
+group using {cd_overlapped_imp_chk3 contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk3 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk1 contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk1 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk1 contributors (1)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk1 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk1 contributors (2)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk1 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk1 contributors (3)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk1 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk1 contributors (4)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk1 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_non_overlapped_imp_chk3 contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_non_overlapped_imp_chk3 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_non_overlapped_imp_chk2 contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_non_overlapped_imp_chk2 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_non_overlapped_imp_chk1 contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_non_overlapped_imp_chk1 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk1 contributors (5)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk1 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk2 contributors (1)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk2 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {cd_overlapped_imp_chk3 contributors (1)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.cd_overlapped_imp_chk3 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {de_non_overlapped_imp_chk1 contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.de_non_overlapped_imp_chk1 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {de_non_overlapped_imp_chk3 contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.de_non_overlapped_imp_chk3 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {de_non_overlapped_imp_chk2 contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.de_non_overlapped_imp_chk2 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {de_non_overlapped_imp_chk1 contributors (1)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.de_non_overlapped_imp_chk1 contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {abcd_imp_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.abcd_imp_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ]
+group using {nonseq_transfer_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.nonseq_transfer_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HTRANS[1:0]}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HWRITE}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HBURST[2:0]}]} ]
+group using {hsel_hwrite_chk contributors (1)}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.hsel_hwrite_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HWRITE}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HSEL}]} ]
+group using {ahb_nonseq_transfer_chk contributors}
+group set -overlay 0
+group set -comment {simulator::tb_top.ahb_intf.ahb_nonseq_transfer_chk contributors}
+group clear 0 end
+
+group insert \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HRESETN}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HWRITE}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HBURST[2:0]}]} ] \
+    [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf.HTRANS[1:0]}]} ]
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 1916x1000+0+25}] != ""} {
+    window geometry "Design Browser 1" 1916x1000+0+25
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf}]} ]
+browser set \
+    -signalsort name
+browser yview see [subst  {$dbNames(realName1)::[format {tb_top.ahb_intf}]} ]
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1916x1000+0+25}] != ""} {
+    window geometry "Waveform 1" 1916x1000+0+25
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 332 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HCLK}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HREADY}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HREADY_I}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HRESETN}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HSEL}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HWRITE}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HRESP[1:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HBURST[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HTRANS[1:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HSIZE[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HADDR[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HWDATA[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {tb_top.ahb_intf.HRDATA[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{simulator::[format {tb_top.ahb_intf.ahb_nonseq_transfer_chk}]}
+	} ]]
+
+set groupId0 [waveform add -groups {{ahb_nonseq_transfer_chk contributors}}]
+
+
+waveform xview limits 0 120000ps
+waveform delta load {-item baseline -value 0} {-item {cursor baseline} -value 120,000ps} {-item {cursor baseline} -value 120,000ps}
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 1916x1000+0+25
+
+#
+# Layout selection
+#
+

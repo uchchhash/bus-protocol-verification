@@ -1,0 +1,58 @@
+//------ CONTROL SIGNALS ------//
+//-----------------------------//
+
+//------- TRANSFER TYPE -------//
+//--- HTRANS[1:0]----TYPE-----//
+//-----------------------------//
+//-0---00-----------IDLE------//
+//-1---01-----------BUSY------//
+//-2---10-----------NONSEQ------//
+//-3---11-----------SEQ------//
+
+
+
+//------- BURST OPERATION -------//
+//--- HBURST[2:0]--TYPE----------------Description----------//
+//----------------------------------------------------------//
+//-0---000---------SINGLE------ Single Transfer-------------//
+//-1---001---------INCR-- Incrementing burst of unspecified length-//
+//-2---010---------WRAP4------ 4-beat wrapping burst--------//
+//-3---011---------INCR4------ 4-beat incrementing burst----//
+//-4---100---------WRAP8------ 8-beat wrapping burst -------//
+//-5---101---------INCR8------ 8-beat incrementing burst ---//
+//-6---110---------WRAP16----- 16-beat wrapping burst ------//
+//-7---111---------INCR16----- 16-beat incrementing burst---//
+
+
+//------- TRANSFER SIZE -------//
+//--- HSIZE[2:0]----SIZE---------Description----//
+//-------------------------------------------//
+//-0---000-----------8 bits-------- BYTE------//
+//-1---001-----------16 bits------ HALFWORD----//
+//-2---010-----------32 bits------ WORD--------//
+//-3---011-----------64 bits-------------------//
+//-4---100-----------128 bits---- 4-WORD LINE -//
+//-5---101-----------256 bits---- 8-WORD LINE -//
+//-6---110-----------512 bits-----  -----------//
+//-7---111-----------1024 bits----- ------------//
+
+
+//------- TRANSFER RESPONSE -------//
+//--- HRESP[1:0]----RESPONSE-------Description-------------------//
+//-----------------------------------------------------------------//
+//-0---00-----------OKAY------ Transfer Completed Successfully----//
+//-1---01-----------ERROR---- Two cycle ERROR response------------//
+//-2---10-----------RETRY---- Two cycle RETRY response------------//
+//-3---11-----------SPLIT----- Two cycle SPLIT response ----------//
+
+
+//--------- BURST ADDRESS BOUNDARY --------//
+//-----------------------------------------//
+//- MAX LIMIT = 1kB = 1024 bytes = 1 * 1024 * 8 = 8192 bits = 3FF (HEX) --//
+//-- BURST SIZE = NUMBER OF BEATS IN THE BURST -----//
+//-- TRANSFER SIZE = AMOUNT OF DATA IN EACH BEAT ---//
+//-------------------------------------------------//
+// TOTAL_BYTES = (#beats_in_burst * size_of_every_beats)
+// ALIGNED_ADDRESS = (STARTING_ADDRESS - (STARTING_ADDRESS % TOTAL_BYTES))
+// WRAP_BOUNDARY = (ALIGNED_ADDRESS + )
+//-------------------------------------------------//

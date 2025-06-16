@@ -1,0 +1,23 @@
+class ahb_incr4_halfword_wr_test extends ahb_base_test;
+
+    `uvm_component_utils(ahb_incr4_halfword_wr_test)
+
+    function new(string name="ahb_incr4_halfword_wr_test", uvm_component parent=null);
+        super.new(name, parent);
+        `uvm_info(get_type_name(), "---- AHB incr4_halfword_WRITE_READ Test Constructed ----", UVM_LOW);
+    endfunction
+
+    bit [31:0] start_address = 280; //0x02
+    bit bsy = 1'b0;  
+    bit rnd = 1'b1;
+
+    virtual task run_phase(uvm_phase phase);
+        phase.raise_objection(this);
+        `uvm_info(get_type_name(), "AHB incr4_halfword_WRITE_READ Test 'Run Phase' Started", UVM_HIGH);
+        ahb_incr4_halfword_write(start_address,rnd);
+        ahb_incr4_halfword_read(start_address);
+        phase.drop_objection(this);
+    endtask
+
+
+endclass

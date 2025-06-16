@@ -1,0 +1,11 @@
+export CADHOME=/tools/cadence
+export LM_LICENSE_FILE=5268@toronto
+export PATH=$PATH:$CADHOME/IUS/bin:$CADHOME/IUS/tools/bin::$CADHOME/IUS/tools/vtools/vfault/bin
+export LD_LIBRARY_PATH=$CADHOME/IUS/tools/lib/64bit:$CADHOME/IUS/tools/lib
+AMS_ENABLE_NOISE=YES
+export PATH=$PATH:$CADHOME/IUS/tools/iccr/bin
+export uvm_home=$CADHOME/IUS/tools/uvm
+export ml_uvm=$CADHOME/IUS/tools/uvm/uvm_lib/uvm_ml/sc/ml_uvm
+export ml_seq_dir=$CADHOME/IUS/specman/src
+export SOCV_KIT_HOME=$CADHOME/IUS/kits/VerificationKit
+

@@ -1,0 +1,36 @@
+`include "uvm_macros.svh"
+import uvm_pkg::*;
+
+class ahb_sequence_item extends uvm_sequence_item;
+	
+	`uvm_object_utils(ahb_sequence_item)
+
+  	function new(string name= "ahb_sequence_item");
+    	super.new(name);
+      `uvm_info(get_type_name(), "---- AHB Sequence Item Constructed ----", UVM_HIGH);
+  	endfunction
+  
+  	//---- Flags to control the test type ----//
+    bit has_reset;
+    bit has_read;
+  	bit has_write;
+  
+  	//---- Data and Address ----//
+  	bit [`dataWidth-1:0] write_data; 
+  	bit [`dataWidth-1:0] read_data;
+    bit [`addrWidth-1:0] start_address;
+    
+    //---- Control Signals ----//
+    bit [1:0] htrans;
+    bit [2:0] hsize;
+    bit [2:0] hburst;
+    int burst_size; //#burst from hburst
+    int transfer_size; //#Bytes from hsize
+  
+  	bit hselx;
+  	bit hwrite;
+  	bit hresetn;
+	bit hready;
+  	bit hresp;
+ 
+endclass
