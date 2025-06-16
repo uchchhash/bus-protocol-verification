@@ -1,0 +1,15 @@
+session SPI_regression {
+	top_dir : $ENV(MY_WORKING_DIR)/spi_cov_dir;
+	output_mode : log_only;
+}
+
+group spi_test {
+    run_script: "$RUN_ENV(MY_WORKING_DIR)/run_regress.sh";
+    scan_script: "vm_scan.pl /tools/cadence/IUS/vmanager/bin/ius.flt /tools/cadence/IUS/vmanager/bin/shell.flt";
+
+    timeout : 1000000;
+    sv_seed : random;
+
+    #include "$MY_WORKING_DIR/spi_regression_test"
+
+};

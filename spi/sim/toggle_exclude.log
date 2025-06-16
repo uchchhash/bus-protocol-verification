@@ -1,0 +1,3 @@
+tb_top.DUT.PADDR[0]
+tb_top.DUT.PADDR[1]
+tb_top.DUT.PSLVERR

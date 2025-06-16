@@ -1,0 +1,11 @@
+test spi_combination_test {run_script: "$MY_WORKING_DIR/run.sh spi_combination_test"; count : 1;};
+test spi_auto_ss_test {run_script: "$MY_WORKING_DIR/run.sh spi_auto_ss_test"; count : 1;};
+test spi_char_len_test {run_script: "$MY_WORKING_DIR/run.sh spi_char_len_test"; count : 1;};
+test spi_divider_test {run_script: "$MY_WORKING_DIR/run.sh spi_divider_test"; count : 1;};
+test spi_interrupt_test {run_script: "$MY_WORKING_DIR/run.sh spi_interrupt_test"; count : 1;};
+test spi_lsb_test {run_script: "$MY_WORKING_DIR/run.sh spi_lsb_test"; count : 1;};
+test spi_msb_test {run_script: "$MY_WORKING_DIR/run.sh spi_msb_test"; count : 1;};
+test spi_mode0_test {run_script: "$MY_WORKING_DIR/run.sh spi_mode0_test"; count : 1;};
+test spi_mode1_test {run_script: "$MY_WORKING_DIR/run.sh spi_mode1_test"; count : 1;};
+test spi_slvsel_test {run_script: "$MY_WORKING_DIR/run.sh spi_slvsel_test"; count : 1;};
+test spi_random_test {run_script: "$MY_WORKING_DIR/run.sh spi_random_test"; count : 1;};

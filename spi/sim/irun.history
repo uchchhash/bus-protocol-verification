@@ -1,0 +1,2 @@
+s1(16May2023:17:22:20):  irun -timescale 1ns/1ps -f filelist.f -access +rwc -uvm -svseed random +UVM_VERBOSITY=UVM_MEDIUM +UVM_TESTNAME=spi_auto_ss_test -coverage all -covtest spi_auto_ss_test 
+s2(16May2023:17:22:36):  irun -timescale 1ns/1ps -f filelist.f -access +rwc -uvm -svseed random +UVM_VERBOSITY=UVM_MEDIUM +UVM_TESTNAME=spi_char_len_test -coverage all -covtest spi_char_len_test 

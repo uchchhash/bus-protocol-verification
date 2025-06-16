@@ -1,0 +1,3 @@
+instance tb_top.DUT.PADDR[0]
+instance tb_top.DUT.PADDR[1]
+instance tb_top.DUT.PSLVERR

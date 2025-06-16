@@ -1,0 +1,20 @@
+              Log File for ICCR 
+              TOOL:	iccr	15.20-s044
+
+############################################################################
+iccr: *W,ICCREL: ICCR, the coverage analysis tool, is now end of support, and no more bug fixes will be provided. Starting 16.1 Incisive release and onwards, ICCR will be removed from all future Incisive releases. Start using the Incisive Metrics Center (IMC) tool provided in the Incisive release stream for coverage analysis.
+iccr> set dut_module spi_top
+
+############################################################################
+iccr> load_test *
+Exploring 1 test directory.
+Loading test ./cov_work/scope/spi_low_frequency_test
+1 coverage database loaded
+
+############################################################################
+iccr> report_html *
+
+Output of report_html command sent to directory: "html_05-16-2023_16~59~22".
+
+############################################################################
+iccr> exit
