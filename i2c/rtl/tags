@@ -1,0 +1,136 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CHK_RD_WR	serialInterface.v	/^`define CHK_RD_WR 4'b0001$/;"	c
+CLK_FREQ	i2cSlave_define.v	/^`define CLK_FREQ 48$/;"	c
+CurrState_SISt	serialInterface.v	/^reg [3:0]CurrState_SISt, NextState_SISt;$/;"	r
+DEB_I2C_LEN	i2cSlave_define.v	/^`define DEB_I2C_LEN (10*`CLK_FREQ)\/48$/;"	c
+I2C_ACK	i2cSlave_define.v	/^`define I2C_ACK 1'b0$/;"	c
+I2C_ADDRESS	i2cSlave_define.v	/^`define I2C_ADDRESS 7'h3c$/;"	c
+I2C_NAK	i2cSlave_define.v	/^`define I2C_NAK 1'b1$/;"	c
+NULL_DET	i2cSlave_define.v	/^`define NULL_DET 2'b00$/;"	c
+NextState_SISt	serialInterface.v	/^reg [3:0]CurrState_SISt, NextState_SISt;$/;"	r
+READ_CHK_LOOP_FIN	serialInterface.v	/^`define READ_CHK_LOOP_FIN 4'b0100$/;"	c
+READ_RD_LOOP	serialInterface.v	/^`define READ_RD_LOOP 4'b0010$/;"	c
+READ_WT_ACK	serialInterface.v	/^`define READ_WT_ACK 4'b0110$/;"	c
+READ_WT_HI	serialInterface.v	/^`define READ_WT_HI 4'b0011$/;"	c
+READ_WT_LO	serialInterface.v	/^`define READ_WT_LO 4'b0101$/;"	c
+SCL_DEL_LEN	i2cSlave_define.v	/^`define SCL_DEL_LEN (10*`CLK_FREQ)\/48$/;"	c
+SDA_DEL_LEN	i2cSlave_define.v	/^`define SDA_DEL_LEN (4*`CLK_FREQ)\/48$/;"	c
+START	serialInterface.v	/^`define START 4'b0000$/;"	c
+START_DET	i2cSlave_define.v	/^`define START_DET 2'b01$/;"	c
+STOP_DET	i2cSlave_define.v	/^`define STOP_DET 2'b10$/;"	c
+STREAM_IDLE	i2cSlave_define.v	/^`define STREAM_IDLE 2'b00$/;"	c
+STREAM_READ	i2cSlave_define.v	/^`define STREAM_READ 2'b01$/;"	c
+STREAM_WRITE_ADDR	i2cSlave_define.v	/^`define STREAM_WRITE_ADDR 2'b10$/;"	c
+STREAM_WRITE_DATA	i2cSlave_define.v	/^`define STREAM_WRITE_DATA 2'b11$/;"	c
+WRITE_CHK_LOOP_FIN	serialInterface.v	/^`define WRITE_CHK_LOOP_FIN 4'b1001$/;"	c
+WRITE_CLR_ST_STOP	serialInterface.v	/^`define WRITE_CLR_ST_STOP 4'b1111$/;"	c
+WRITE_CLR_WR	serialInterface.v	/^`define WRITE_CLR_WR 4'b1110$/;"	c
+WRITE_LOOP_WT_LO	serialInterface.v	/^`define WRITE_LOOP_WT_LO 4'b1010$/;"	c
+WRITE_ST_LOOP	serialInterface.v	/^`define WRITE_ST_LOOP 4'b1011$/;"	c
+WRITE_WT_HI	serialInterface.v	/^`define WRITE_WT_HI 4'b1000$/;"	c
+WRITE_WT_HI2	serialInterface.v	/^`define WRITE_WT_HI2 4'b1101$/;"	c
+WRITE_WT_LO	serialInterface.v	/^`define WRITE_WT_LO 4'b0111$/;"	c
+WRITE_WT_LO2	serialInterface.v	/^`define WRITE_WT_LO2 4'b1100$/;"	c
+addr	registerInterface.v	/^input [7:0] addr;$/;"	p
+bitCnt	serialInterface.v	/^reg  [2:0]bitCnt, next_bitCnt;$/;"	r
+clearStartStopDet	i2cSlave.v	/^wire clearStartStopDet;$/;"	n
+clearStartStopDet	serialInterface.v	/^output  clearStartStopDet;$/;"	p
+clearStartStopDet	serialInterface.v	/^reg     clearStartStopDet, next_clearStartStopDet;$/;"	r
+clk	i2cSlave.v	/^input clk;$/;"	p
+clk	i2cSlaveTop.v	/^input clk;$/;"	p
+clk	registerInterface.v	/^input clk;$/;"	p
+clk	serialInterface.v	/^input   clk;$/;"	p
+clk	serialInterface.v	/^wire    clk;$/;"	n
+dataFromRegIF	i2cSlave.v	/^wire [7:0] dataFromRegIF;$/;"	n
+dataIn	registerInterface.v	/^input [7:0] dataIn;$/;"	p
+dataIn	serialInterface.v	/^input   [7:0]dataIn;$/;"	p
+dataIn	serialInterface.v	/^wire    [7:0]dataIn;$/;"	n
+dataOut	registerInterface.v	/^output [7:0] dataOut;$/;"	p
+dataOut	registerInterface.v	/^reg [7:0] dataOut;$/;"	r
+dataOut	serialInterface.v	/^output  [7:0]dataOut;$/;"	p
+dataOut	serialInterface.v	/^reg     [7:0]dataOut, next_dataOut;$/;"	r
+dataToRegIF	i2cSlave.v	/^wire [7:0] dataToRegIF;$/;"	n
+i2cSlave	i2cSlave.v	/^module i2cSlave ($/;"	m
+i2cSlaveTop	i2cSlaveTop.v	/^module i2cSlaveTop ($/;"	m
+myReg0	i2cSlave.v	/^output [7:0] myReg0;$/;"	p
+myReg0	i2cSlaveTop.v	/^output [7:0] myReg0;$/;"	p
+myReg0	registerInterface.v	/^output [7:0] myReg0;$/;"	p
+myReg0	registerInterface.v	/^reg [7:0] myReg0;$/;"	r
+myReg1	i2cSlave.v	/^output [7:0] myReg1;$/;"	p
+myReg1	i2cSlaveTop.v	/^output [7:0] myReg1;$/;"	p
+myReg1	registerInterface.v	/^output [7:0] myReg1;$/;"	p
+myReg1	registerInterface.v	/^reg [7:0] myReg1;$/;"	r
+myReg2	i2cSlave.v	/^output [7:0] myReg2;$/;"	p
+myReg2	i2cSlaveTop.v	/^output [7:0] myReg2;$/;"	p
+myReg2	registerInterface.v	/^output [7:0] myReg2;$/;"	p
+myReg2	registerInterface.v	/^reg [7:0] myReg2;$/;"	r
+myReg3	i2cSlave.v	/^output [7:0] myReg3;$/;"	p
+myReg3	i2cSlaveTop.v	/^output [7:0] myReg3;$/;"	p
+myReg3	registerInterface.v	/^output [7:0] myReg3;$/;"	p
+myReg3	registerInterface.v	/^reg [7:0] myReg3;$/;"	r
+myReg4	i2cSlave.v	/^input [7:0] myReg4;$/;"	p
+myReg4	i2cSlaveTop.v	/^input  [7:0] myReg4;$/;"	p
+myReg4	registerInterface.v	/^input [7:0] myReg4;$/;"	p
+myReg5	i2cSlave.v	/^input [7:0] myReg5;$/;"	p
+myReg5	i2cSlaveTop.v	/^input  [7:0] myReg5;$/;"	p
+myReg5	registerInterface.v	/^input [7:0] myReg5;$/;"	p
+myReg6	i2cSlave.v	/^input [7:0] myReg6;$/;"	p
+myReg6	i2cSlaveTop.v	/^input  [7:0] myReg6;$/;"	p
+myReg6	registerInterface.v	/^input [7:0] myReg6;$/;"	p
+myReg7	i2cSlave.v	/^input [7:0] myReg7;$/;"	p
+myReg7	i2cSlaveTop.v	/^input  [7:0] myReg7;$/;"	p
+myReg7	registerInterface.v	/^input [7:0] myReg7;$/;"	p
+next_bitCnt	serialInterface.v	/^reg  [2:0]bitCnt, next_bitCnt;$/;"	r
+next_clearStartStopDet	serialInterface.v	/^reg     clearStartStopDet, next_clearStartStopDet;$/;"	r
+next_dataOut	serialInterface.v	/^reg     [7:0]dataOut, next_dataOut;$/;"	r
+next_regAddr	serialInterface.v	/^reg     [7:0]regAddr, next_regAddr;$/;"	r
+next_rxData	serialInterface.v	/^reg  [7:0]rxData, next_rxData;$/;"	r
+next_sdaOut	serialInterface.v	/^reg     sdaOut, next_sdaOut;$/;"	r
+next_streamSt	serialInterface.v	/^reg  [1:0]streamSt, next_streamSt;$/;"	r
+next_txData	serialInterface.v	/^reg  [7:0]txData, next_txData;$/;"	r
+next_writeEn	serialInterface.v	/^reg     writeEn, next_writeEn;$/;"	r
+regAddr	i2cSlave.v	/^wire [7:0] regAddr;$/;"	n
+regAddr	serialInterface.v	/^output  [7:0]regAddr;$/;"	p
+regAddr	serialInterface.v	/^reg     [7:0]regAddr, next_regAddr;$/;"	r
+registerInterface	registerInterface.v	/^module registerInterface ($/;"	m
+rst	i2cSlave.v	/^input rst;$/;"	p
+rst	i2cSlaveTop.v	/^input rst;$/;"	p
+rst	serialInterface.v	/^input   rst;$/;"	p
+rst	serialInterface.v	/^wire    rst;$/;"	n
+rstPipe	i2cSlave.v	/^reg [1:0] rstPipe;$/;"	r
+rstSyncToClk	i2cSlave.v	/^wire rstSyncToClk;$/;"	n
+rxData	serialInterface.v	/^reg  [7:0]rxData, next_rxData;$/;"	r
+scl	i2cSlave.v	/^input scl;$/;"	p
+scl	i2cSlaveTop.v	/^input scl;$/;"	p
+scl	serialInterface.v	/^input   scl;$/;"	p
+scl	serialInterface.v	/^wire    scl;$/;"	n
+sclDeb	i2cSlave.v	/^reg sclDeb;$/;"	r
+sclDelayed	i2cSlave.v	/^reg [`SCL_DEL_LEN-1:0] sclDelayed;$/;"	r
+sclPipe	i2cSlave.v	/^reg [`DEB_I2C_LEN-1:0] sclPipe;$/;"	r
+sda	i2cSlave.v	/^inout sda;$/;"	p
+sda	i2cSlaveTop.v	/^inout sda;$/;"	p
+sdaDeb	i2cSlave.v	/^reg sdaDeb;$/;"	r
+sdaDelayed	i2cSlave.v	/^reg [`SDA_DEL_LEN-1:0] sdaDelayed;$/;"	r
+sdaIn	i2cSlave.v	/^wire sdaIn;$/;"	n
+sdaIn	serialInterface.v	/^input   sdaIn;$/;"	p
+sdaIn	serialInterface.v	/^wire    sdaIn;$/;"	n
+sdaOut	i2cSlave.v	/^wire sdaOut;$/;"	n
+sdaOut	serialInterface.v	/^output  sdaOut;$/;"	p
+sdaOut	serialInterface.v	/^reg     sdaOut, next_sdaOut;$/;"	r
+sdaPipe	i2cSlave.v	/^reg [`DEB_I2C_LEN-1:0] sdaPipe;$/;"	r
+serialInterface	serialInterface.v	/^module serialInterface (clearStartStopDet, clk, dataIn, dataOut, regAddr, rst, scl, sdaIn, sdaOut, startStopDetState, writeEn);$/;"	m
+startEdgeDet	i2cSlave.v	/^reg startEdgeDet;$/;"	r
+startStopDetState	i2cSlave.v	/^reg [1:0] startStopDetState;$/;"	r
+startStopDetState	serialInterface.v	/^input   [1:0]startStopDetState;$/;"	p
+startStopDetState	serialInterface.v	/^wire    [1:0]startStopDetState;$/;"	n
+streamSt	serialInterface.v	/^reg  [1:0]streamSt, next_streamSt;$/;"	r
+txData	serialInterface.v	/^reg  [7:0]txData, next_txData;$/;"	r
+writeEn	i2cSlave.v	/^wire writeEn;$/;"	n
+writeEn	registerInterface.v	/^input writeEn;$/;"	p
+writeEn	serialInterface.v	/^output  writeEn;$/;"	p
+writeEn	serialInterface.v	/^reg     writeEn, next_writeEn;$/;"	r

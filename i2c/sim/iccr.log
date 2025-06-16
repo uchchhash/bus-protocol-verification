@@ -1,0 +1,81 @@
+              Log File for ICCR 
+              TOOL:	iccr(64)	15.20-s086
+
+############################################################################
+iccr: *W,ICCREL: ICCR, the coverage analysis tool, is now end of support, and no more bug fixes will be provided. Starting 16.1 Incisive release and onwards, ICCR will be removed from all future Incisive releases. Start using the Incisive Metrics Center (IMC) tool provided in the Incisive release stream for coverage analysis.
+iccr> set merge -union
+
+############################################################################
+iccr> merge cov_work/scope/* -output merge_dir
+iccr: *W,DUTMDM: The DUT module(s) to be merged is(are) not specified. So top module in primary test is assumed as the DUT module to be merged.
+  
+Reading primary database: cov_work/scope/i2c_m_reset_test
+	Modules considered for merge: uvm_pkg i2c_m_agnt_pkg env_pkg i2c_m_test_pkg $unit tb_top 
+ Merging 7 secondary tests/databases into primary database...
+cov_work/scope/i2c_m_single_wr_test:
+	Instance tree: uvm_pkg to uvm_pkg 
+	  "i2c_m_agnt_pkg" not merged - Not found or not sampled in secondary test.
+	Instance tree: env_pkg to env_pkg 
+	  "i2c_m_test_pkg" not merged - Not found or not sampled in secondary test.
+	  "$unit" not merged - Not found or not sampled in secondary test.
+	Instance tree: tb_top to tb_top 
+cov_work/scope/i2c_m_single_ro_test:
+	Instance tree: uvm_pkg to uvm_pkg 
+	  "i2c_m_agnt_pkg" not merged - Not found or not sampled in secondary test.
+	Instance tree: env_pkg to env_pkg 
+	  "i2c_m_test_pkg" not merged - Not found or not sampled in secondary test.
+	  "$unit" not merged - Not found or not sampled in secondary test.
+	Instance tree: tb_top to tb_top 
+cov_work/scope/i2c_m_restart_wr_test:
+	Instance tree: uvm_pkg to uvm_pkg 
+	  "i2c_m_agnt_pkg" not merged - Not found or not sampled in secondary test.
+	Instance tree: env_pkg to env_pkg 
+	  "i2c_m_test_pkg" not merged - Not found or not sampled in secondary test.
+	  "$unit" not merged - Not found or not sampled in secondary test.
+	Instance tree: tb_top to tb_top 
+cov_work/scope/i2c_m_restart_ro_test:
+	Instance tree: uvm_pkg to uvm_pkg 
+	  "i2c_m_agnt_pkg" not merged - Not found or not sampled in secondary test.
+	Instance tree: env_pkg to env_pkg 
+	  "i2c_m_test_pkg" not merged - Not found or not sampled in secondary test.
+	  "$unit" not merged - Not found or not sampled in secondary test.
+	Instance tree: tb_top to tb_top 
+cov_work/scope/i2c_m_combination_test:
+	Instance tree: uvm_pkg to uvm_pkg 
+	  "i2c_m_agnt_pkg" not merged - Not found or not sampled in secondary test.
+	Instance tree: env_pkg to env_pkg 
+	  "i2c_m_test_pkg" not merged - Not found or not sampled in secondary test.
+	  "$unit" not merged - Not found or not sampled in secondary test.
+	Instance tree: tb_top to tb_top 
+cov_work/scope/i2c_m_successive_ro_test:
+	Instance tree: uvm_pkg to uvm_pkg 
+	  "i2c_m_agnt_pkg" not merged - Not found or not sampled in secondary test.
+	Instance tree: env_pkg to env_pkg 
+	  "i2c_m_test_pkg" not merged - Not found or not sampled in secondary test.
+	  "$unit" not merged - Not found or not sampled in secondary test.
+	Instance tree: tb_top to tb_top 
+cov_work/scope/i2c_m_successive_wr_test:
+	Instance tree: uvm_pkg to uvm_pkg 
+	  "i2c_m_agnt_pkg" not merged - Not found or not sampled in secondary test.
+	Instance tree: env_pkg to env_pkg 
+	  "i2c_m_test_pkg" not merged - Not found or not sampled in secondary test.
+	  "$unit" not merged - Not found or not sampled in secondary test.
+	Instance tree: tb_top to tb_top 
+
+Writing output database: cov_work/scope/merge_dir
+Total items not merged:          21
+List of conflicts and complete list of non-merged items report only when merge is run with -message option.
+
+############################################################################
+iccr> load_test merge_dir
+Exploring 1 test directory.
+Loading test ./cov_work/scope/merge_dir
+1 coverage database loaded
+
+############################################################################
+iccr> report_html *
+
+Output of report_html command sent to directory: "html_02-27-2024_09~38~28".
+
+############################################################################
+iccr> exit
