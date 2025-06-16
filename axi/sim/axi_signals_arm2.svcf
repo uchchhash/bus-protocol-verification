@@ -1,0 +1,213 @@
+# SimVision Command Script (Wed Nov 08 03:49:52 PM +06 2023)
+#
+# Version 15.20.s086
+#
+# You can restore this configuration with:
+#
+#      irun -timescale 1ns/1ps -f filelist.f -access +rwc -uvm -svseed random +UVM_VERBOSITY=UVM_MEDIUM +UVM_TESTNAME=axi_wrap_burst_test -s -input /home/Uc211217/Uc211217/ucchash_work/DV/protocols/amba_axi/amba_axi_arm_v2/sim/axi_signals_arm2
+#
+
+
+#
+# Preferences
+#
+preferences set txe-locate-add-fibers 1
+preferences set signal-type-colors {assertion #FF0000 output #FFA500 group #0099FF inout #00FFFF input #FFFF00 fiber #00EEEE errorsignal #FF0000 unknown #FFFFFF overlay #0099FF internal #00FF00 reference #FFFFFF}
+preferences set txe-navigate-search-locate 0
+preferences set txe-view-hold 0
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set verilog-colors {Su #ff0099 0 {} 1 {} HiZ #ff9900 We #00ffff Pu #9900ff Sm #00ff99 X #ff0000 StrX #ff0000 other #ffff00 Z #ff9900 Me #0000ff La #ff00ff St {}}
+preferences set txe-navigate-waveform-locate 1
+preferences set txe-view-hidden 0
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set txe-search-show-linenumbers 1
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set toolbar-txe_waveform_toggle-WaveWindow {
+  usual
+  position -pos 3
+}
+preferences set toolbar-Standard-WaveWindow {
+  usual
+  position -pos 2
+}
+preferences set plugin-enable-groupscope 0
+preferences set key-bindings {Edit>Undo Ctrl+z PageUp PageUp View>Zoom>Next {Alt+Right arrow} View>Zoom>In Alt+i PageDown PageDown Edit>Copy Ctrl+c ScrollDown {Down arrow} Edit>Create>Group Ctrl+g View>Zoom>FullY_widget y Simulation>NextInScope F7 Edit>Select>All Ctrl+a Format>Radix>Decimal Ctrl+Shift+D Edit>Ungroup Ctrl+Shift+G TopOfPage Home Edit>Create>Condition Ctrl+e {command -console SimVision {%w sidebar access designbrowser selectall}} Alt+a ScrollLeft {Left arrow} Edit>SelectAllText Alt+a Edit>TextSearchConsole Alt+s View>Zoom>FullX_widget = Windows>SendTo>Waveform Ctrl+w Simulation>Return Shift+F5 View>CallstackDown {Ctrl+Down arrow} Select>All Ctrl+a Edit>Delete Del Format>Radix>Octal Ctrl+Shift+O Edit>Cut Ctrl+x Simulation>Run F2 Edit>Create>Marker Ctrl+m View>Center Alt+c View>CallstackInWindow Ctrl+k Edit>SelectAll Ctrl+a File>OpenDatabase Ctrl+o Edit>Redo Ctrl+y Format>Radix>Binary Ctrl+Shift+B View>ExpandSequenceTime>AtCursor Alt+x ScrollUp {Up arrow} File>CloseWindow Ctrl+Shift+w ScrollRight {Right arrow} View>Zoom>FullX Alt+= Edit>Create>Bus Ctrl+b Explore>NextEdge Ctrl+\] View>Zoom>Cursor-Baseline Alt+z View>Zoom>OutX Alt+o Edit>GoToLine Ctrl+g View>Zoom>Fit Alt+= View>Zoom>OutX_widget o View>CallstackUp {Ctrl+Up arrow} View>Bookmarks>Add Ctrl+b View>ShowValues Ctrl+s Simulation>Next F6 Edit>Search Ctrl+f Format>Radix>Hexadecimal Ctrl+Shift+H Edit>Create>MarkerAtCursor Ctrl+Shift+M View>Zoom>InX Alt+i View>Zoom>Out Alt+o Edit>TextSearch Ctrl+f View>Zoom>Previous {Alt+Left arrow} Edit>Paste Ctrl+v Format>Signed Ctrl+Shift+S Control>ReinvokeSimulator Ctrl+Shift+R View>CollapseSequenceTime>AtCursor Alt+s View>Zoom>InX_widget i Format>Radix>ASCII Ctrl+Shift+A Simulation>Step F5 Explore>PreviousEdge {Ctrl+[} BottomOfPage End}
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set toolbar-Windows-WaveWindow {
+  usual
+  position -pos 4
+}
+preferences set txe-navigate-waveform-next-child 1
+preferences set vhdl-colors {H #00ffff L #00ffff 0 {} X #ff0000 - {} 1 {} U #9900ff Z #ff9900 W #ff0000}
+preferences set txe-locate-scroll-x 1
+preferences set txe-locate-scroll-y 1
+preferences set txe-locate-pop-waveform 1
+preferences set whats-new-dont-show-at-startup 1
+
+#
+# Simulator
+#
+database require simulator -hints {
+	simulator "irun -timescale 1ns/1ps -f filelist.f -access +rwc -uvm -svseed random -gui +UVM_VERBOSITY=UVM_MEDIUM +UVM_TESTNAME=axi_wrap_burst_test -s -input axi_signals_arm2"
+}
+#
+# Groups
+#
+catch {group new -name {Write-Address-Channel (AW)} -overlay 0}
+catch {group new -name {Write-Data-Channel (W)} -overlay 0}
+catch {group new -name {Write-Response-Channel (B)} -overlay 0}
+catch {group new -name {Read-Address-Channel (AR)} -overlay 0}
+catch {group new -name {Read-Data-Channel (R)} -overlay 0}
+group using {Write-Address-Channel (AW)}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {tb_top.axi_vif.AWID[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.AWVALID}]} ] \
+    [subst  {[format {tb_top.axi_vif.AWREADY}]} ] \
+    [subst  {[format {tb_top.axi_vif.AWADDR[31:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.AWLEN[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.AWSIZE[2:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.AWBURST[1:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.AWLOCK[1:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.AWCACHE[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.AWPROT[2:0]}]} ]
+group using {Write-Data-Channel (W)}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {tb_top.axi_vif.WID[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.WVALID}]} ] \
+    [subst  {[format {tb_top.axi_vif.WREADY}]} ] \
+    [subst  {[format {tb_top.axi_vif.WDATA[31:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.WSTRB[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.WLAST}]} ]
+group using {Write-Response-Channel (B)}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {tb_top.axi_vif.BID[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.BVALID}]} ] \
+    [subst  {[format {tb_top.axi_vif.BREADY}]} ] \
+    [subst  {[format {tb_top.axi_vif.BRESP[1:0]}]} ]
+group using {Read-Address-Channel (AR)}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {tb_top.axi_vif.ARID[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.ARVALID}]} ] \
+    [subst  {[format {tb_top.axi_vif.ARREADY}]} ] \
+    [subst  {[format {tb_top.axi_vif.ARADDR[31:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.ARLEN[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.ARSIZE[2:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.ARBURST[1:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.ARLOCK[1:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.ARCACHE[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.ARPROT[2:0]}]} ]
+group using {Read-Data-Channel (R)}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {tb_top.axi_vif.RID[3:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.RVALID}]} ] \
+    [subst  {[format {tb_top.axi_vif.RREADY}]} ] \
+    [subst  {[format {tb_top.axi_vif.RDATA[31:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.RRESP[1:0]}]} ] \
+    [subst  {[format {tb_top.axi_vif.RLAST}]} ]
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 1920x977+-1+27}] != ""} {
+    window geometry "Design Browser 1" 1920x977+-1+27
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope [subst  {[format {tb_top.axi_vif}]} ]
+browser set \
+    -signalsort name
+browser yview see [subst  {[format {tb_top.axi_vif}]} ]
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x977+-1+27}] != ""} {
+    window geometry "Waveform 1" 1920x977+-1+27
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 254 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals [subst  {
+	{[format {tb_top.axi_vif.ACLK}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.axi_vif.ARESETn}]}
+	} ]]
+
+set groupId0 [waveform add -groups {{Write-Address-Channel (AW)}}]
+
+
+set groupId0 [waveform add -groups {{Write-Data-Channel (W)}}]
+
+
+set groupId0 [waveform add -groups {{Write-Response-Channel (B)}}]
+
+
+set groupId0 [waveform add -groups {{Read-Address-Channel (AR)}}]
+
+
+set groupId0 [waveform add -groups {{Read-Data-Channel (R)}}]
+
+
+waveform xview limits 0 500000ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 1920x977+-1+27
+
+#
+# Layout selection
+#
+
