@@ -89,8 +89,8 @@ bus-protocol-verification/
 ## 🛠️ Tools & Technologies
 
 - **Hardware Languages**: Verilog, SystemVerilog, SV-Assertions, UVM  
-- **EDA Tools**: Cadence (Xcelium, Virtuoso, IMC, vManager), Synopsys (VCS, Verdi), ModelSim  
-- **Waveform/Debug**: Verdi, SimVision  
+- **EDA Tools**: Cadence (Xcelium, Virtuoso, IMC, vManager) 
+- **Waveform/Debug**: SimVision  
 
 ---
 
